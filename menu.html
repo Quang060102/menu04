@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIA VƯỜN NHÀ BI</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0a0a0a;
+color:white;
+margin:0;
+}
+
+.header{
+text-align:center;
+padding:20px;
+background:#000;
+border-bottom:3px solid #ffb400;
+}
+
+.header h1{
+color:#ffb400;
+margin:0;
+}
+
+.ban{
+text-align:center;
+padding:10px;
+font-size:18px;
+}
+
+.slider{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+}
+
+.page{
+min-width:100%;
+scroll-snap-align:start;
+max-width:700px;
+margin:auto;
+padding:10px;
+}
+
+.page h2{
+color:#ffb400;
+}
+
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+.right{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.price{
+color:#ffb400;
+font-weight:bold;
+}
+
+.qty{
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+button{
+background:#ffb400;
+border:none;
+padding:6px 10px;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.count{
+min-width:20px;
+text-align:center;
+}
+
+.cart{
+max-width:700px;
+margin:auto;
+padding:10px;
+}
+
+.send{
+width:100%;
+padding:12px;
+font-size:18px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>🍺 BIA VƯỜN NHÀ BI</h1>
+<p>Vuốt sang để xem món</p>
+</div>
+
+<div class="ban">
+  Bàn: 
+  <input list="danh-sach-ban" id="ban" placeholder="Chọn hoặc nhập..." 
+         style="width: 150px; padding: 8px; border: 1px solid #ff9800; border-radius: 5px; font-size: 16px;" 
+         onfocus="this.value=''" 
+         onchange="this.blur()">
+         
+  
+  <datalist id="danh-sach-ban">
+    <option value="Bàn lộc vừng trái">
+    <option value="Bàn lộc vừng giữa">
+    <option value="Bàn lộc vừng phải">
+    <option value="Bàn đào tiên trái">
+    <option value="Bàn đào tiên phải">
+    <option value="Bàn cột đèn ngoài">
+    <option value="Bàn cột đèn trong">
+    <option value="Mang về">
+  </datalist>
+</div>
+</div>
+
+<div class="slider">
+
+<!-- KHAI VỊ -->
+
+<div class="page">
+<h2>🥗 Khai vị</h2>
+
+<div class="item">
+<span>01. Đậu rán</span>
+<div class="right">
+<span class="price">30k</span>
+<div class="qty">
+<button onclick="minus('Đậu rán')">-</button>
+<span id="Đậu rán" class="count">0</span>
+<button onclick="add('Đậu rán')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>02. Đậu tẩm hành</span>
+<div class="right">
+<span class="price">40k</span>
+<div class="qty">
+<button onclick="minus('Đậu tẩm hành')">-</button>
+<span id="Đậu tẩm hành" class="count">0</span>
+<button onclick="add('Đậu tẩm hành')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>03. Nem chua</span>
+<div class="right">
+<span class="price">40k</span>
+<div class="qty">
+<button onclick="minus('Nem chua')">-</button>
+<span id="Nem chua" class="count">0</span>
+<button onclick="add('Nem chua')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>04. Nem Ngựa</span>
+<div class="right">
+<span class="price">80k</span>
+<div class="qty">
+<button onclick="minus('Nem ngựa')">-</button>
+<span id="Nem ngựa" class="count">0</span>
+<button onclick="add('Nem ngựa')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>05. Giò bò</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Giò bò')">-</button>
+<span id="Giò bò" class="count">0</span>
+<button onclick="add('Giò bò')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>06. Ngô chiên</span>
+<div class="right">
+<span class="price">40k</span>
+<div class="qty">
+<button onclick="minus('Ngô chiên')">-</button>
+<span id="Ngô chiên" class="count">0</span>
+<button onclick="add('Ngô chiên')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>07. Cá chỉ vàng</span>
+<div class="right">
+<span class="price">80k</span>
+<div class="qty">
+<button onclick="minus('Cá chỉ vàng')">-</button>
+<span id="Cá chỉ vàng" class="count">0</span>
+<button onclick="add('Cá chỉ vàng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>08. Cá mai chao</span>
+<div class="right">
+<span class="price">110k</span>
+<div class="qty">
+<button onclick="minus('Cá mai chao')">-</button>
+<span id="Cá mai chao" class="count">0</span>
+<button onclick="add('Cá mai chao')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>09. Mực khô nướng</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Mực khô nướng')">-</button>
+<span id="Mực khô nướng" class="count">0</span>
+<button onclick="add('Mực khô nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>10. Mướp đắng ruốc</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Mướp đắng ruốc')">-</button>
+<span id="Mướp đắng ruốc" class="count">0</span>
+<button onclick="add('Mướp đắng ruốc')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>11. Tóp mỡ dưa chua</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Tóp mỡ dưa chua')">-</button>
+<span id="Tóp mỡ dưa chua" class="count">0</span>
+<button onclick="add('Tóp mỡ dưa chua')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>12. Hến xúc phồng tôm</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Hến xúc phồng tôm')">-</button>
+<span id="Hến xúc phồng tôm" class="count">0</span>
+<button onclick="add('Hến xúc phồng tôm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>13. Bò xúc phồng tôm</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Bò xúc phồng tôm')">-</button>
+<span id="Bò xúc phồng tôm" class="count">0</span>
+<button onclick="add('Bò xúc phồng tôm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>14. Nộm tai heo</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Nộm tai heo')">-</button>
+<span id="Nộm tai heo" class="count">0</span>
+<button onclick="add('Nộm tai heo')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>15. Nộm bò</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Nộm bò')">-</button>
+<span id="Nộm bò" class="count">0</span>
+<button onclick="add('Nộm bò')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>16. Nộm sứa</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Nộm sứa')">-</button>
+<span id="Nộm sứa" class="count">0</span>
+<button onclick="add('Nộm sứa')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>17. Trứng rán lá ngải</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Trứng rán lá ngải')">-</button>
+<span id="Trứng rán lá ngải" class="count">0</span>
+<button onclick="add('Trứng rán lá ngải')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>18. Lưỡi lợn trần</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Lưỡi lợn trần')">-</button>
+<span id="Lưỡi lợn trần" class="count">0</span>
+<button onclick="add('Lưỡi lợn trần')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>19. Quai lạc trần</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Quai lạc trần')">-</button>
+<span id="Quai lạc trần" class="count">0</span>
+<button onclick="add('Quai lạc trần')">+</button>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<!-- NƯỚNG -->
+
+<div class="page">
+<h2>🔥 Món nướng</h2>
+
+<div class="item">
+<span>01. Gà nướng cả con</span>
+<div class="right">
+<span class="price">300k</span>
+<div class="qty">
+<button onclick="minus('Gà nướng cả con')">-</button>
+<span id="Gà nướng cả con" class="count">0</span>
+<button onclick="add('Gà nướng cả con')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>02. Gà nướng nửa con</span>
+<div class="right">
+<span class="price">160k</span>
+<div class="qty">
+<button onclick="minus('Gà nướng nửa con')">-</button>
+<span id="Gà nướng nửa con" class="count">0</span>
+<button onclick="add('Gà nướng nửa con')">+</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<span>03. Tôm nướng</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Tôm nướng')">-</button>
+<span id="Tôm nướng" class="count">0</span>
+<button onclick="add('Tôm nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>04. Hàu nướng</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Hàu nướng')">-</button>
+<span id="Hàu nướng" class="count">0</span>
+<button onclick="add('Hàu nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>05. Cá nướng</span>
+<div class="right">
+<span class="price">200k</span>
+<div class="qty">
+<button onclick="minus('Cá nướng')">-</button>
+<span id="Cá nướng" class="count">0</span>
+<button onclick="add('Cá nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>06. Ba chỉ nướng</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Ba chỉ nướng')">-</button>
+<span id="Ba chỉ nướng" class="count">0</span>
+<button onclick="add('Ba chỉ nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>07. Dồi sụn nướng</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Dồi sụn nướng')">-</button>
+<span id="Dồi sụn nướng" class="count">0</span>
+<button onclick="add('Dồi sụn nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>08. Lòng nướng</span>
+<div class="right">
+<span class="price">80k</span>
+<div class="qty">
+<button onclick="minus('Lòng nướng')">-</button>
+<span id="Lòng nướng" class="count">0</span>
+<button onclick="add('Lòng nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>09. Cật nướng</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Cật nướng')">-</button>
+<span id="Cật nướng" class="count">0</span>
+<button onclick="add('Cật nướng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>10. Thập cẩm nướng</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Thập cẩm nướng')">-</button>
+<span id="Thập cẩm nướng" class="count">0</span>
+<button onclick="add('Thập cẩm nướng')">+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- XÀO -->
+
+<div class="page">
+<h2>🥘 Món xào</h2>
+
+<div class="item">
+<span>01. Rau xào</span>
+<div class="right">
+<span class="price">40k</span>
+<div class="qty">
+<button onclick="minus('Rau xào')">-</button>
+<span id="Rau xào" class="count">0</span>
+<button onclick="add('Rau xào')">+</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<span>02. Ếch xào măng</span>
+<div class="right">
+<span class="price">120k</span>
+<div class="qty">
+<button onclick="minus('Ếch xào măng')">-</button>
+<span id="Ếch xào măng" class="count">0</span>
+<button onclick="add('Ếch xào măng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>03. Ngựa xào rau</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Ngựa xào rau')">-</button>
+<span id="Ngựa xào rau" class="count">0</span>
+<button onclick="add('Ngựa xào rau')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>04. Bắp bò xào rau</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Bắp bò xào rau')">-</button>
+<span id="Bắp bò xào rau" class="count">0</span>
+<button onclick="add('Bắp bò xào rau')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>05. Chó xào lăn</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Chó xào lăn')">-</button>
+<span id="Chó xào lăn" class="count">0</span>
+<button onclick="add('Chó xào lăn')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>06. Xách xào</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Xách xào')">-</button>
+<span id="Xách xào" class="count">0</span>
+<button onclick="add('Xách xào')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>07. Lòng xào dưa</span>
+<div class="right">
+<span class="price">80k</span>
+<div class="qty">
+<button onclick="minus('Lòng xào dưa')">-</button>
+<span id="Lòng xào dưa" class="count">0</span>
+<button onclick="add('Lòng xào dưa')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>08. Quai lạc xào rau</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Quai lạc xào rau')">-</button>
+<span id="Quai lạc xào rau" class="count">0</span>
+<button onclick="add('Quai lạc xào rau')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>09. Mướp đắng xào trứng</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Mướp đắng xào trứng')">-</button>
+<span id="Mướp đắng xào trứng" class="count">0</span>
+<button onclick="add('Mướp đắng xào trứng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>10. Mực xào</span>
+<div class="right">
+<span class="price">200k</span>
+<div class="qty">
+<button onclick="minus('Mực xào')">-</button>
+<span id="Mực xào" class="count">0</span>
+<button onclick="add('Mực xào')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>11. Mực nấu chua</span>
+<div class="right">
+<span class="price">200k</span>
+<div class="qty">
+<button onclick="minus('Mực nấu chua')">-</button>
+<span id="Mực nấu chua" class="count">0</span>
+<button onclick="add('Mực nấu chua')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>12. Mực hấp</span>
+<div class="right">
+<span class="price">200k</span>
+<div class="qty">
+<button onclick="minus('Mực hấp')">-</button>
+<span id="Mực hấp" class="count">0</span>
+<button onclick="add('Mực hấp')">+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- CHIÊN -->
+
+<div class="page">
+<h2>🍳 Món chiên</h2>
+
+<div class="item">
+<span>01. Ếch rang muối</span>
+<div class="right">
+<span class="price">120k</span>
+<div class="qty">
+<button onclick="minus('Ếch rang muối')">-</button>
+<span id="Ếch rang muối" class="count">0</span>
+<button onclick="add('Ếch rang muối')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>02. Gà rang muối</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Gà rang muối')">-</button>
+<span id="Gà rang muối" class="count">0</span>
+<button onclick="add('Gà rang muối')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>03. Gà chiên mắm</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Gà chiên mắm')">-</button>
+<span id="Gà chiên mắm" class="count">0</span>
+<button onclick="add('Gà chiên mắm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>04. Vịt rang riềng</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Vịt rang riềng')">-</button>
+<span id="Vịt rang riềng" class="count">0</span>
+<button onclick="add('Vịt rang riềng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>05. Chân gà chiên mắm</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Chân gà chiên mắm')">-</button>
+<span id="Chân gà chiên mắm" class="count">0</span>
+<button onclick="add('Chân gà chiên mắm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>06. Sú lợn chiên mắm</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Sú lợn chiên mắm')">-</button>
+<span id="Sú lợn chiên mắm" class="count">0</span>
+<button onclick="add('Sú lợn chiên mắm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>07. Tôm rang muối</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Tôm rang muối')">-</button>
+<span id="Tôm rang muối" class="count">0</span>
+<button onclick="add('Tôm rang muối')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>08. Cá trứng chiên lá lốt</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Cá trứng chiên lá nốt')">-</button>
+<span id="Cá trứng chiên lá nốt" class="count">0</span>
+<button onclick="add('Cá trứng chiên lá nốt')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>10. Châu chấu chiên</span>
+<div class="right">
+<span class="price">120k</span>
+<div class="qty">
+<button onclick="minus('Châu chấu chiên')">-</button>
+<span id="Châu chấu chiên" class="count">0</span>
+<button onclick="add('Châu chấu chiên')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>11. Cá bống chiên lá nốt</span>
+<div class="right">
+<span class="price">120k</span>
+<div class="qty">
+<button onclick="minus('Cá bống chiên lá nốt')">-</button>
+<span id="Cá bống chiên lá nốt" class="count">0</span>
+<button onclick="add('Cá bống chiên lá nốt')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>12. Ba chỉ rang riềng</span>
+<div class="right">
+<span class="price">130k</span>
+<div class="qty">
+<button onclick="minus('Ba chỉ rang riềng')">-</button>
+<span id="Ba chỉ rang riềng" class="count">0</span>
+<button onclick="add('Ba chỉ rang riềng')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>13. Sườn chao móc mật</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Sườn chao móc mật')">-</button>
+<span id="Sườn chao móc mật" class="count">0</span>
+<button onclick="add('Sườn chao móc mật')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>14. Quai lạc chao móc mật</span>
+<div class="right">
+<span class="price">150k</span>
+<div class="qty">
+<button onclick="minus('Quai lạc chao móc mật')">-</button>
+<span id="Quai lạc chao móc mật" class="count">0</span>
+<button onclick="add('Quai lạc chao móc mật')">+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- LẨU -->
+
+<div class="page">
+<h2>🍲 Lẩu</h2>
+
+<div class="item">
+<span>01. Lẩu thái thập cẩm</span>
+<div class="right">
+<span class="price">500-1000k</span>
+<div class="qty">
+<button onclick="minus('Lẩu thái thập cẩm')">-</button>
+<span id="Lẩu thái thập cẩm" class="count">0</span>
+<button onclick="add('Lẩu thái thập cẩm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>02. Lẩu ếch</span>
+<div class="right">
+<span class="price">400k-600k</span>
+<div class="qty">
+<button onclick="minus('Lẩu ếch')">-</button>
+<span id="Lẩu ếch" class="count">0</span>
+<button onclick="add('Lẩu ếch')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>03. Lẩu xương đầu</span>
+<div class="right">
+<span class="price">400k</span>
+<div class="qty">
+<button onclick="minus('Lẩu xương đầu')">-</button>
+<span id="Lẩu xương đầu" class="count">0</span>
+<button onclick="add('Lẩu xương đầu')">+</button>
+</div>
+</div>
+</div>
+
+</div>
+<!--CƠM MỲ-->
+<div class="page">
+<h2>🥤 Cơm mỳ</h2>
+<div class="item">
+<span>01. Cơm rang thập cẩm</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Cơm rang thập cẩm')">-</button>
+<span id="Cơm rang thập cẩm" class="count">0</span>
+<button onclick="add('Cơm rang thập cẩm')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>02. Cơm rang dưa bò</span>
+<div class="right">
+<span class="price">80k</span>
+<div class="qty">
+<button onclick="minus('Cơm rang dưa bò')">-</button>
+<span id="Cơm rang dưa bò" class="count">0</span>
+<button onclick="add('Cơm rang dưa bò')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>03. Cơm rang hải sản</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Cơm rang hải sản')">-</button>
+<span id="Cơm rang hải sản" class="count">0</span>
+<button onclick="add('Cơm rang hải sản')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>04. Mì xào</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Mì xào')">-</button>
+<span id="Mì xào" class="count">0</span>
+<button onclick="add('Mì xào')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>05. Canh chua cá rìa</span>
+<div class="right">
+<span class="price">100k</span>
+<div class="qty">
+<button onclick="minus('Canh chua cá rìa')">-</button>
+<span id="Canh chua cá rìa" class="count">0</span>
+<button onclick="add('Canh chua cá rìa')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>06. Canh trứng</span>
+<div class="right">
+<span class="price">60k</span>
+<div class="qty">
+<button onclick="minus('Canh trứng')">-</button>
+<span id="Canh trứng" class="count">0</span>
+<button onclick="add('Canh trứng')">+</button>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<!-- ĐỒ UỐNG -->
+
+<div class="page">
+<h2>🥤 Đồ uống</h2>
+
+<div class="item">
+<span>01. Bia hơi</span>
+<div class="right">
+<span class="price">8k</span>
+<div class="qty">
+<button onclick="minus('Bia hơi')">-</button>
+<span id="Bia hơi" class="count">0</span>
+<button onclick="add('Bia hơi')">+</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<span>02. Bia Lon</span>
+<div class="right">
+<span class="price">13k</span>
+<div class="qty">
+<button onclick="minus('Bia lon')">-</button>
+<span id="Bia lon" class="count">0</span>
+<button onclick="add('Bia lon')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>03. Bia chai</span>
+<div class="right">
+<span class="price">14k</span>
+<div class="qty">
+<button onclick="minus('Bia chai')">-</button>
+<span id="Bia chai" class="count">0</span>
+<button onclick="add('Bia chai')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>04. Nước ngọt</span>
+<div class="right">
+<span class="price">15k</span>
+<div class="qty">
+<button onclick="minus('Nước ngọt')">-</button>
+<span id="Nước ngọt" class="count">0</span>
+<button onclick="add('Nước ngọt')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>05. Nước lọc</span>
+<div class="right">
+<span class="price">10k</span>
+<div class="qty">
+<button onclick="minus('Nước lọc')">-</button>
+<span id="Nước lọc" class="count">0</span>
+<button onclick="add('Nước lọc')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>07. Rượu</span>
+<div class="right">
+<span class="price">30k</span>
+<div class="qty">
+<button onclick="minus('Rượu')">-</button>
+<span id="Rượu" class="count">0</span>
+<button onclick="add('Rượu')">+</button>
+</div>
+</div>
+</div>
+<div class="item">
+<span>08. Thuốc lá</span>
+<div class="right">
+<span class="price">20k</span>
+<div class="qty">
+<button onclick="minus('Thuốc lá')">-</button>
+<span id="Thuốc lá" class="count">0</span>
+<button onclick="add('Thuốc lá')">+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="cart">
+
+<h3>🛒 Món đã chọn</h3>
+
+<ul id="cart"></ul>
+
+<button class="send" onclick="sendOrder()">📩 Gửi gọi món</button>
+
+</div>
+
+<script>
+// 1. Cấu hình URL và nhận diện bàn ban đầu
+const url = "https://script.google.com/macros/s/AKfycbzkEAAOkPTeywjxNNzDFagDNZnP3pIyrmQdYaYcmdNYM7gcMD9UsA5S2VN8f54vopY/exec";
+
+// Lấy số bàn từ link QR (nếu có) và điền vào ô nhập lúc mới mở trang
+const params = new URLSearchParams(window.location.search);
+const banBanDau = params.get("ban") || ""; 
+if (document.getElementById("ban")) {
+    document.getElementById("ban").value = banBanDau;
+}
+
+let cart = {};
+
+// 2. Hàm thêm món vào giỏ
+function add(food) {
+    if (!cart[food]) cart[food] = 0;
+    cart[food]++;
+    update();
+}
+
+// 3. Hàm bớt món khỏi giỏ
+function minus(food) {
+    if (cart[food]) {
+        cart[food]--;
+        if (cart[food] <= 0) delete cart[food];
+        update();
+    }
+}
+
+// 4. Cập nhật hiển thị danh sách món đã chọn
+function update() {
+    let list = document.getElementById("cart");
+    list.innerHTML = "";
+    
+    // Reset tất cả các số hiển thị trên menu về 0 trước khi cập nhật
+    document.querySelectorAll(".count").forEach(e => e.innerText = 0);
+
+    for (let food in cart) {
+        let li = document.createElement("li");
+        li.innerText = food + " x" + cart[food];
+        list.appendChild(li);
+        
+        // Hiển thị số lượng lên từng món trong menu
+        if (document.getElementById(food)) {
+            document.getElementById(food).innerText = cart[food];
+        }
+    }
+}
+
+// 5. Hàm gửi đơn hàng - Đã sửa để XÓA TRẮNG sau khi gửi
+function sendOrder() {
+    // Lấy giá trị thực tế đang hiển thị trong ô nhập bàn
+    let inputBan = document.getElementById("ban");
+    let soBanHienTai = inputBan ? inputBan.value : "";
+
+    // Kiểm tra lỗi trước khi gửi
+    if (!soBanHienTai || soBanHienTai.trim() === "") {
+        alert("⚠️ Quang ơi, nhắc anh em chọn số bàn đã nhé!");
+        return;
+    }
+    if (Object.keys(cart).length === 0) {
+        alert("🛒 Giỏ hàng đang trống, chọn món đã Quang ơi!");
+        return;
+    }
+
+    // Gom danh sách món thành chuỗi văn bản
+    let order = "";
+    for (let food in cart) {
+        order += food + " x" + cart[food] + ", ";
+    }
+
+    // Gửi dữ liệu về Google Sheets
+    fetch(url, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            ban: soBanHienTai, 
+            mon: order
+        })
+    });
+
+    alert("✅ Đã gửi đơn thành công cho: " + soBanHienTai);
+
+    // XÓA SẠCH DỮ LIỆU ĐỂ ĐÓN ĐƠN TIẾP THEO
+    cart = {}; // Xóa giỏ hàng
+    update();  // Reset hiển thị món về 0
+    
+    if (inputBan) {
+        inputBan.value = ""; // XÓA TRẮNG ô số bàn
+        inputBan.focus();    // Tự động đưa con trỏ vào ô bàn để chọn bàn tiếp theo
+    }
+}
+</script>
+
+</body>
+</html>
